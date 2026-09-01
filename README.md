@@ -16,6 +16,11 @@ shared code. The public website itself stays in the main repository under
 Asset licensing is set out in [LICENSES.md](./LICENSES.md). Note in particular
 that Remotion is not MIT-licensed.
 
+Product behavior, verified claims and launch timing remain authoritative in the
+[main warehouse repository](https://github.com/egemeny13/euroleague-analytics).
+The current launch date is **2026-09-16**. This repository owns media production;
+it does not independently redefine the product or its schedule.
+
 ---
 
 # EuroLeague Analytics — 30-Second Launch Video (V2)
@@ -41,8 +46,8 @@ npm run dev
 ## 2. Rendering the Video
 
 ```bash
-# Render V2 Launch Video
-npx remotion render src/index.ts EuroLeagueLaunch output/euroleague-launch-v2.mp4
+# Render and exact-trim the verified launch video
+npm run build
 ```
 
 ### Video Specifications:
@@ -59,7 +64,7 @@ npx remotion render src/index.ts EuroLeagueLaunch output/euroleague-launch-v2.mp
 2. **Interactive AI Conversation Scene (Heart of the Video)**:
    - Real-time typed question: *"How did Paris perform with TJ Shorts on vs. off the floor in E2024?"* with typing sound and blinking cursor.
    - Assistant *Thinking* phase with pulsing state and processing tone.
-   - MCP tool execution indicator (`el_get_on_off_splits` &bull; 2,488 possessions verified).
+   - MCP tool execution indicator (`el_get_player_on_off` &bull; 2,488 possessions verified).
    - Hero answer presentation with camera zoom on the `+5.09` vs `-11.45` net rating split.
 3. **Dynamic Motion & Continuous Camera Push-ins**: Eliminated the static feeling with smooth scale transitions, letter tracking, and camera momentum across all scenes.
 4. **Enhanced Basketball & UI Sound Design**:

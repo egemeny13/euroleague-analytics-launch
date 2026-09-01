@@ -175,7 +175,7 @@ export const Scene3ChatConversation: React.FC = () => {
                 fontWeight: 600,
               }}
             >
-              el_get_on_off_splits
+              el_get_player_on_off
               <span style={{ color: THEME.colors.textSecondary, fontWeight: 400 }}>
                 (season: "E2024", player: "SHORTS, TJ", team: "PRS")
               </span>

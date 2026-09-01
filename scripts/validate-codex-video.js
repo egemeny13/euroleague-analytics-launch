@@ -14,6 +14,8 @@ const requireText = (source, value, label) => {
 
 const rootSource = read('src/Root.tsx');
 const filmSource = read('src/CodexLaunch.tsx');
+const readme = read('README.md');
+const brief = read('BRIEF.md');
 const packageJson = JSON.parse(read('package.json'));
 
 requireText(rootSource, 'id="EuroLeagueLaunchCodex"', 'composition');
@@ -55,6 +57,39 @@ if (
   'remotion render src/index.ts EuroLeagueLaunchCodex output/euroleague-launch-codex.mp4 --codec=h264 && node scripts/finalize-codex-video.js'
 ) {
   throw new Error('build:codex must render and exact-trim the independent H.264 deliverable');
+}
+
+if (packageJson.scripts.build !== 'npm run build:codex') {
+  throw new Error('the default build must render the verified Codex composition');
+}
+
+if (
+  packageJson.scripts.still !==
+  'remotion still src/index.ts EuroLeagueLaunchCodex output/still.png'
+) {
+  throw new Error('the default still must use the verified Codex composition');
+}
+
+requireText(readme, 'npm run build', 'README render command');
+requireText(readme, 'el_get_player_on_off', 'README tool name');
+requireText(brief, '2026-09-16', 'current launch date');
+
+for (const [relativePath, source] of [
+  ['README.md', readme],
+  ['BRIEF.md', brief],
+  ['src/scenes/Scene3ChatConversation.tsx', read('src/scenes/Scene3ChatConversation.tsx')],
+  ['src/scenes/Scene3RealQuery.tsx', read('src/scenes/Scene3RealQuery.tsx')],
+]) {
+  for (const staleText of [
+    'el_get_on_off_splits',
+    '2026-09-27',
+    'launch worktree',
+    'launch-specific worktree',
+  ]) {
+    if (source.includes(staleText)) {
+      throw new Error(`${relativePath}: stale text ${JSON.stringify(staleText)}`);
+    }
+  }
 }
 
 console.log('Codex launch-video contract passed.');
