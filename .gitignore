@@ -1,0 +1,14 @@
+# Node
+node_modules/
+package-lock.json
+
+# Intermediate renders and review frame dumps. The committed files under
+# output/ are the finished pieces that the launch actually used; everything
+# below is a working artefact that would only grow the history.
+output/codex-pass*
+output/codex-final-review/
+output/euroleague-launch.mp4
+output/euroleague-launch-v2.mp4
+output/still-*.png
+output/v2-*.png
+output/scene*.png
