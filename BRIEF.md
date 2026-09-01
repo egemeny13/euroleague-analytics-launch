@@ -1,10 +1,10 @@
 # EuroLeague Analytics — Launch Package Master Brief
 
-**Status:** Working source of truth for the launch worktree  
-**Scope:** Website, launch videos, X/Twitter announcement thread, shared art direction, research notes, production rules  
-**Target launch window:** ~2026-09-27, only after two or three clean live game nights  
-**Primary implementation environment:** launch-specific worktree/branch  
-**Last consolidated:** 2026-09-01
+**Status:** Creative production source of truth for this media repository
+**Scope:** Website, launch videos, X/Twitter announcement thread, shared art direction, research notes, production rules
+**Target launch date:** 2026-09-16; final material gate on 2026-09-15
+**Primary implementation environment:** `euroleague-analytics-launch` repository
+**Last consolidated:** 2026-09-02
 
 ---
 
@@ -12,15 +12,17 @@
 
 The launch work has accumulated decisions across website design, motion/video production, tool experiments, launch copy, and product positioning.
 
-This file consolidates those decisions into one source of truth for the launch worktree.
+This file consolidates those creative decisions for the launch media repository.
 
 It is intentionally broader than a storyboard or a website spec. The website, videos, and X thread should feel like one launch package created from the same product story and the same design system.
 
-This document should guide agents working in the launch worktree. It is not permission to expand product scope.
+This document should guide agents working in this repository. It is not permission to expand product scope.
 
 ### Repository authority
 
-For product behavior and engineering decisions, existing repository authority still wins:
+For product behavior, verified claims and launch timing, the
+[main warehouse repository](https://github.com/egemeny13/euroleague-analytics)
+still wins:
 
 1. `CLAUDE.md`
 2. `DECISIONS.md`
@@ -1174,7 +1176,7 @@ For non-Premium accounts, X currently allows up to 140 seconds / 512 MB.
 
 Official source: https://help.x.com/en/using-x/x-videos
 
-Keep source/render files in the launch worktree/release assets; do not treat X as the archive.
+Keep source/render files in this repository or its release assets; do not treat X as the archive.
 
 ---
 
@@ -1292,15 +1294,17 @@ After this point, agents should not invent new design directions.
 - verify setup instructions
 - verify licenses
 
-## Phase D — Live-season replacement
+## Phase D — Launch and optional live-season follow-up
 
-Per current launch plan:
+Per the current main-repository launch plan:
 
-- prepare scripts/storyboards before live season
-- record final live material on 2026-09-25 / 2026-09-26 after clean nights
-- launch around 2026-09-27 only if live validation conditions are satisfied
+- complete the website, thread and media review by 2026-09-15
+- launch the historical E2024/E2025-backed package on 2026-09-16
+- treat the 2026-09-18/19 SuperCup run as the first public live-data test
+- optionally publish a second-wave live-season example after 2026-09-24
 
-The launch date is not more important than correctness.
+If the material is not ready on 2026-09-15, the launch moves. Live-season
+material is a follow-up opportunity, not a condition for the initial launch.
 
 ---
 
@@ -1433,7 +1437,7 @@ These should be answered through research/testing, not by an agent guessing.
 4. HyperFrames vs Remotion for final launch film
 5. Final main launch-film reference grammar after manual reverse engineering
 6. Final guide-video length
-7. Final live-season example to record after 2026-09-24
+7. Optional second-wave live-season example after 2026-09-24
 8. Hero implementation: live DOM interaction vs pre-rendered muted video vs hybrid
 9. Connect section: client tabs vs universal endpoint first
 10. Final X wording
